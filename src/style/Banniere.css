@@ -1,0 +1,50 @@
+.header {margin: 0;}
+.navbar-header .li{
+    display: inline;
+    text-align: center;
+    margin-right: 20px;
+    right: 0%;
+    text-transform: uppercase;
+    position: relative; z-index: 100;
+  }
+
+.navbar-header2 .li{
+    display: inline;
+    text-align: center;
+    margin-left: 20px;
+    left: 100%;
+    text-transform: uppercase;
+    position: relative; z-index: 100;
+}  
+
+.navbar {
+    overflow: hidden;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: black solid 1px;
+    background-color: #E6CB42;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border: 2px solid #999;
+    color: white;
+  }
+
+  .navbar a:hover {
+    background: white;
+    color: black;
+  }
+
+  .formulaire{
+    right: 50%;
+    position: absolute;
+    padding-top: 32px;
+  }

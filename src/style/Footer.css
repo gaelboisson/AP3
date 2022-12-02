@@ -1,0 +1,22 @@
+
+.Footer ul{
+    display:flex;
+    position: fixed;
+    bottom: 0;
+    background-color: #E6CB42;
+    width: 100%;
+    height: 80px;
+    margin-bottom: -20px;
+    padding-top: 20px;
+    
+}
+
+.Footer li{
+    margin: 10px;
+    flex-grow: 1;
+    list-style: none;
+}
+
+body{
+    margin-top: 15px;
+}
