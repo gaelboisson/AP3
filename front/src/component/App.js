@@ -1,0 +1,27 @@
+import '../style/App.css';
+import Banniere from './Banniere';
+import Produits from './Produit';
+import Panier from './Panier';
+import Inscrire from './Inscrire';
+import Connecter from './Connecter';
+import Admin from './Admin';
+import Footer from './Footer'
+import { Route, Routes, Link } from "react-router-dom";
+import React, { useState } from 'react';
+
+function App() {
+  return (
+    <div className="App">
+      <Banniere />
+      <Routes>
+        <Route path="/connect" element={<Connecter />} />
+        <Route path="/inscr" element={<Inscrire />} />
+        <Route path="/" element={<Produits />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+      <Footer/>
+    </div>
+  );
+}
+
+export default App;

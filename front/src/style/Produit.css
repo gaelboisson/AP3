@@ -1,0 +1,76 @@
+.Contenu{
+    display: flex;
+    width: 100%;
+    margin-right: 100px;
+}
+
+.Contenu .prod{
+    height: 250px; 
+    width: 200px;
+}
+
+.Contenu .Kadi{
+    height: 20px; 
+    width: 20px;
+}
+
+.Contenu .Moins{
+    height: 20px; 
+    width: 20px;
+}
+
+button{
+    align-items: center;
+    padding: -20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-grid;
+}
+
+.Contenu .box{
+    margin-top: 100px;
+    border: 2px solid;
+    width: min-content;
+    padding: 0;
+    margin-left: 5%;
+    box-shadow: 8px 8px 12px crimson;
+}
+
+.Contenu .Gant {
+    margin-top: 100px;
+    border: 2px solid;
+    width: min-content;
+    padding: 0px;
+    margin-left: 10%;
+    box-shadow: 8px 8px 12px rgba(61,58,63,255);
+    
+}
+
+.Contenu .Fil {
+    margin-top: 100px;
+    border: 2px solid;
+    width: min-content;
+    padding: 0px;
+    margin-left: 10%;
+    box-shadow: 8px 8px 12px rgba(203,82,48,255);
+    
+}
+
+.Contenu .Housse {
+    margin-top: 100px;
+    border: 2px solid;
+    width: min-content;
+    padding: 0px;
+    margin-left: 10%;
+    box-shadow: 8px 8px 12px rgba(35,90,180,255);
+    
+}
+
+.Contenu .Protec {
+    margin-top: 100px;
+    border: 2px solid;
+    width: min-content;
+    padding: 0px;
+    margin-left: 10%;
+    box-shadow: 8px 8px 12px rgba(210,46,40,255);
+}
