@@ -10,7 +10,9 @@ function valider(e){
 }
 
 function FormBlog()
-{ 
+{
+  const [mail, setMail] = useState('')
+  const [mdp, setMdp] = useState('')
   const [Input_Mail, setInputMdp] = useState('')
   let inputErrorMail = Input_Mail.includes("")
 
@@ -20,12 +22,12 @@ function FormBlog()
               <form name="Connexion" onsubmit="vérif()">
                   <p><h3>Connectez-vous</h3></p>
                   <hr/>
-                  <p>E-mail: <input name="mail" type="texte" onChange={(e) => setInputMdp(e.target.value)} placeholder="Mail"/> </p>
-                  <p>Mot de passe: <input name="Mdp" type="password" onChange={(e) => setInputMdp(e.target.value)} placeholder="Mdp"/></p> 
+                  <p>E-mail: <input name="mail" type="text" onChange={(e) => setMail(e.target.value)} placeholder="mail"/> </p>
+                  <p>Mot de passe: <input name="mdp" type="password" onChange={(e) => setMdp(e.target.value)} placeholder="mdp"/></p> 
                   
 
                   {
-                  Input_Mail != "gael.boisson.77@gmail.com" ?
+                  mail != "gael.boisson.77@gmail.com" || mdp ?
                   <div>
                     {/* Votre mail n'est pas enregistre */}
                   </div> : 

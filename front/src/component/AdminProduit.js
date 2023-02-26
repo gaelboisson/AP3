@@ -39,7 +39,6 @@ export default function AdminProduit() {
 return (
   <>
   <div className='body'>
-      <h2> Nos produits </h2>
       <div className="box">
           {affichage ?
             <div className="Contenu">

@@ -31,7 +31,7 @@ export default function EditProduit() {
         await axios.put(`http://localhost:8000/produit/` + id, {
             nom: nom,
             prix: prix,
-            descritpion: description,
+            description: description,
             img: img,
             stock: stock,
         })
@@ -39,7 +39,7 @@ export default function EditProduit() {
                 console.log(res)
                 if (res.status === 200) {
                     alert("Envoie réussi")
-                    navigate("/");
+                    navigate("/adminProduit");
                 }
                 else {
                     alert("Erreur d'envoi")
@@ -59,16 +59,16 @@ export default function EditProduit() {
             <form onSubmit={handleSubmit(editProduit)}>
                 <label>Nom </label>
                 <input defaultValue={nom} onChange={(e) => setNom(e.target.value)} />
-
+                <br/>
                 <label>Prix </label>
                 <input defaultValue={prix} onChange={(e) => setPrix(e.target.value)} />
-
+                <br/>
                 <label>Description </label>
                 <input defaultValue={description} onChange={(e) => setDescription(e.target.value)} />
-
+                <br/>
                 <label>Chemin de l'image </label>
                 <input defaultValue={img} onChange={(e) => setImg(e.target.value)} />
-
+                <br/>
                 <label>Stock </label>
                 <input defaultValue={stock} onChange={(e) => setStock(e.target.value)} />
 

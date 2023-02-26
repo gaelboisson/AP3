@@ -19,17 +19,25 @@ function App() {
     <div className="App">
       <Banniere />
       <Routes>
+        {/* accueil */}
         <Route path="/connect" element={<Connecter />} />
         <Route path="/inscr" element={<Inscrire />} />
-        <Route path="/" element={<Produits />} />
+        {/* accueil */}
+        
+        {/* partie client */}
+        <Route path="" element={<Produits />} />
+        {/* partie client */}
+
+        {/* partie admin */}
         <Route path="/adminProduit" element={<AdminProduit />} />
         <Route path="/ajoutProduit" element={<AjoutProduit />} />
         <Route path="/editProduit/:id" element={<EditProduit />} />
         <Route path="/suppressionProduit/:id" element={<SupprProduit />} />
         <Route path="/adminUser" element={<AdminUser />} />
         <Route path="/supprUser/:id" element={<SupprUser />} />
+        {/* partie admin */}
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

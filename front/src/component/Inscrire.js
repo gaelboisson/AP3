@@ -44,6 +44,7 @@ function FormBlog()
     return (
     <div className="App">
         <div className="form">
+        <p><h3>Inscription</h3></p>
         <form onSubmit={Inscription}>
             <div className="input-container ic4">
                 <input name="mail" type="text" onChange={(e) => {setMail(e.target.value)}} placeholder = "Adresse mail" required />

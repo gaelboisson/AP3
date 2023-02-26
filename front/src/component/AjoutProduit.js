@@ -36,7 +36,7 @@ function FormBlog()
         console.log(res)
         if (res.status === 200) {
             alert("Ajout réussi")
-            navigate("/");
+            navigate("/adminProduit");
         }
         else {
             alert("Erreur d'ajout")
@@ -48,11 +48,12 @@ function FormBlog()
     <div className="App">
         <div className="form">
         <form onSubmit={Ajouter}>
+            <h2> Ajouter un produit</h2>
             <div className="input-container ic4">
                 <input name="nom" type="text" onChange={(e) => {setNom(e.target.value)}} placeholder = "Nom du produit" required />
             </div>
             <div className="input-container ic4">
-                <input name="img" type="text" onChange={(e) => {setImg(e.target.value)}} placeholder = "Chemmin de l'image" required />
+                <input name="img" type="text" onChange={(e) => {setImg(e.target.value)}} placeholder = "Chemin de l'image" required />
             </div>
             <div className="input-container ic4">
                 <input name="prix" type="text" onChange={(e) => {setPrix(e.target.value)}} placeholder = "Prix" required />

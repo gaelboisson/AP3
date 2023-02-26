@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import '../style/Test.css'
 
 
 export default function SupprProduit() {
@@ -26,10 +27,10 @@ export default function SupprProduit() {
     }
     return (
         <div className='container'>
-            <form onSubmit={handleSubmit(suppressionProduit)} >
+            <form className='form' onSubmit={handleSubmit(suppressionProduit)} >
                 <h2> Confirmer la suppression ?</h2>
                 <input type="submit" value="Valider" />
-                <Link to="/" className='bouton-annuler'> Annuler </Link>
+                <Link to="/adminProduit" className='bouton-annuler'> Annuler </Link>
             </form>
         </div>
     )

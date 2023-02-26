@@ -72,7 +72,8 @@ app.put('/produit/:id', async (req,res) => { // modification des produits
         console.log("lancement de la connexion")
         conn = await pool.getConnection();
         console.log("lancement de la requete update")
-        const rows= await conn.query('UPDATE produit SET nom = ?, img = ?, stock = ?, description = ? WHERE ID = ?', [req.body.stock, id]);
+        const rows= await conn.query('UPDATE produit SET nom = ?, img = ?, prix = ?, stock = ?, description = ? WHERE ID = ?', 
+        [req.body.nom, req.body.img, req.body.prix, req.body.stock, req.body.description, id]);
         console.log(rows);
         res.status(200).json(rows.affectedRows)
     }

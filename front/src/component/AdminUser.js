@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import '../style/Produit.css'
+import '../style/User.css'
 
 
 function valider(e){
@@ -43,18 +43,15 @@ return (
             <div className="Contenu">
               {
               clients.map(client => (
-                  <div key={`produit-${client.id}`} className="box">
+                  <div key={`produit-${client.id}`} className="Ubox">
                       <div className='box-body'>
-                          Adresser mail : {client.mail}
-                          <br />
-                          Prenom : {client.prenom}
-                          <br />
-                          Nom : {client.nom}
-                          <br />
-                          Mot de passe : {client.mdp}
+                          <p className="champs">Adresse mail : {client.mail}</p>
+                          <p>Prenom : {client.prenom}</p>
+                          <p>Nom : {client.nom}</p>
+                          <p>Mot de passe : {client.mdp}</p>
                       </div>
                       <div className='box-footer'>
-                        <button Link to={'/supprUser/'+ client.id}>suppr</button>
+                        <Link to={'/supprUser/'+ client.id}>suppr</Link>
                       </div>
                   </div>
               ))}

@@ -1,0 +1,38 @@
+.Contenu{
+    display: flex;
+    width: 100%;
+    margin-right: 100px;
+}
+
+.Contenu .prod{
+    height: 250px; 
+    width: 200px;
+}
+
+.Contenu .Kadi{
+    height: 20px; 
+    width: 20px;
+}
+
+.Contenu .Moins{
+    height: 20px; 
+    width: 20px;
+}
+
+button{
+    align-items: center;
+    padding: -20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-grid;
+}
+
+.Contenu .Ubox{
+    margin-top: 100px;
+    border: 2px solid;
+    width: min-content;
+    padding: 0;
+    margin-left: 5%;
+    padding: 30px;
+}
+
