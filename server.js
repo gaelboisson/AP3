@@ -49,7 +49,7 @@ app.get('/produit/:id', async (req,res) => { // affichage des produits avec leur
     }
 })
 
-app.post('/produit', async (req,res) => {  //inscription des clients
+app.post('/produit', async (req,res) => {  //Ajout de produit
     let recup;
     try{
         console.log("lancement de la connexion")
@@ -100,13 +100,13 @@ app.delete('/produit/:id', async (req,res) => { // suppression des produits
 
 //début de l'api côté user
 
-app.get('/user', async(req,res) => { // affichage des utilisateurs
+app.get('/client', async(req,res) => { // affichage des utilisateurs
     let conn;
     try{
         console.log("lancement de la connexion")
         conn = await pool.getConnection();
         console.log("lancement de la requete")
-        const rows= await conn.query('SELECT * FROM client');
+        const rows= await conn.query('SELECT * FROM client WHERE role=1');
         console.log(rows);
         res.status(200).json(rows)
     }
@@ -115,7 +115,7 @@ app.get('/user', async(req,res) => { // affichage des utilisateurs
     }
 })
 
-app.get('/user/:id', async (req,res) => { // affichage des users avec leur id
+app.get('/client/:id', async (req,res) => { // affichage des users avec leur id
     const id = parseInt(req.params.id)
     let conn;
     try{
@@ -131,13 +131,14 @@ app.get('/user/:id', async (req,res) => { // affichage des users avec leur id
     }
 })
 
-app.post('/user', async (req,res) => {  //inscription des clients
+app.post('/client', async (req,res) => {  //inscription des clients
     let recup;
     try{
         console.log("lancement de la connexion")
         recup = await pool.getConnection();
         console.log("lancement de la requete insert")
-        const rows= await recup.query('INSERT INTO client (login, mdp) VALUES (?, ?)', [req.body.login, req.body.mdp]);
+        const rows= await recup.query('INSERT INTO client (mail, prenom, nom, mdp) VALUES (?, ?, ?, ?)', 
+        [req.body.mail, req.body.prenom, req.body.nom, req.body.mdp]);
         console.log(rows);
         res.status(200).json(rows.affectedRows)
     }
@@ -146,7 +147,7 @@ app.post('/user', async (req,res) => {  //inscription des clients
     }
 })
 
-app.put('/user/:id', async (req,res) => { // modification des produits
+app.put('/client/:id', async (req,res) => { // modification des clients
     const id = parseInt(req.params.id)
     let conn;
     try{
@@ -162,7 +163,7 @@ app.put('/user/:id', async (req,res) => { // modification des produits
     }
 })
 
-app.delete('/user/:id', async (req,res) => { // suppression des users
+app.delete('/client/:id', async (req,res) => { // suppression des users
     const id = parseInt(req.params.id)
     let conn;
     try{
