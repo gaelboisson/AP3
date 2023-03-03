@@ -2,7 +2,7 @@ import '../style/Panier.css';
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
-export default function Panier({count}) {
+export default function Panier({count,destock}) {
 
   const [produits, setProduits] = useState([])
   const [affichage, setAffichage] = useState(false)
@@ -35,8 +35,12 @@ export default function Panier({count}) {
                   <div key={`produit-${produit.id}`} className="box">
                       
                       <div className='box-body'>
-                          <p>{produit.nom} : </p>
+                          <p>{produit.nom} : {destock}</p>
                       </div>
+
+                      <button type="button" onClick={() => count - produit.prix}>
+                        -
+                      </button>
                   </div>
               ))}
             </div>

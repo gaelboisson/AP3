@@ -1,6 +1,6 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 import '../style/Connecter.css'
-
+import axios from 'axios'
 
 function valider(e){
   e.preventDefault()
@@ -13,8 +13,23 @@ function FormBlog()
 {
   const [mail, setMail] = useState('')
   const [mdp, setMdp] = useState('')
-  const [Input_Mail, setInputMdp] = useState('')
-  let inputErrorMail = Input_Mail.includes("")
+  let inputErrorMail = mail.includes("")
+
+  const [clients, setClients] = useState([])
+  const [affichage, setAffichage] = useState(false)
+
+  const recup = async () => {
+    await axios.get(`http://localhost:8000/client`)
+        .then(res => {
+            console.log(res)
+            setClients(res.data)
+            setAffichage(true)
+        })
+}
+
+useEffect(() => {
+  recup()
+}, [])
 
     return (
       <div className="Contenue">

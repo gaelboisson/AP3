@@ -28,12 +28,13 @@ button{
 }
 
 .Contenu .box{
-    margin-top: 200px;
+    margin-top: 150px;
     border: 2px solid;
     width: min-content;
     padding: 0;
     margin-left: 5%;
     box-shadow: 8px 8px 12px crimson;
+    background-color: white;
 }
 
 .Contenu .Gant {

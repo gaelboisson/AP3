@@ -4,7 +4,6 @@ import Kadi from '../asset/pannier.webp'
 import ReactDOM from "react-dom/client";
 import Panier from "./Panier";
 import axios from 'axios';
-import logo from '../asset/logo.jpg';
 
 function valider(e){
     e.preventDefault()
@@ -20,6 +19,7 @@ export default function FavoriteColor() {
   const [affichage, setAffichage] = useState(false)
   
     const [count, setCount] = useState(0)
+    const [destock, setDestock] = useState(0)
 
     produits.map((produit) => {console.log(produit)})
 
@@ -38,7 +38,7 @@ export default function FavoriteColor() {
 
 return (
   <>
-  <Panier count={count}/>
+  <Panier count={count} destock={destock}/>
   <div className='body'>
       <div className="box">
           {affichage ?
@@ -47,14 +47,14 @@ return (
               produits.map(produit => (
                   <div key={`produit-${produit.id}`} className="box">
                       <div className='box-title' >
-                        <img src={produit.img} className="prod"/>
+                        <img src={`${process.env.PUBLIC_URL}/images/${produit.img}`} className="prod"/>
                       </div>
                       <div className='box-body'>
                           {produit.nom}
                           <br />
                           {produit.prix} €
                       </div>
-                      <button type="button" onClick={() => setCount(count + produit.prix)}>
+                      <button type="button" onClick={() =>setCount(count + produit.prix) & setDestock(destock + 1)}>
                         <img src={Kadi} className="Kadi"></img>
                       </button>
                   </div>

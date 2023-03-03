@@ -1,7 +1,7 @@
 
 .Footer ul{
     display:flex;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     background-color: #E6CB42;
     width: 100%;

@@ -46,7 +46,7 @@ return (
               produits.map(produit => (
                   <div key={`produit-${produit.id}`} className="box">
                       <div className='box-title' >
-                        <img src={produit.img} className="prod"/>
+                        <img src={`${process.env.PUBLIC_URL}/images/${produit.img}`} className="prod"/>
                       </div>
                       <div className='box-body'>
                           {produit.nom}
@@ -67,6 +67,8 @@ return (
             : <p>Chargement...</p>
           }
       </div>
+      <br/>
+      <Link to="/ajoutProduit/">Ajouter un article</Link>
   </div>
   </>
 )}

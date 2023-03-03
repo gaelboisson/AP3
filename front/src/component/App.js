@@ -20,12 +20,12 @@ function App() {
       <Banniere />
       <Routes>
         {/* accueil */}
-        <Route path="/connect" element={<Connecter />} />
+        <Route path="/" element={<Connecter />} />
         <Route path="/inscr" element={<Inscrire />} />
         {/* accueil */}
         
         {/* partie client */}
-        <Route path="" element={<Produits />} />
+        <Route path="produit" element={<Produits />} />
         {/* partie client */}
 
         {/* partie admin */}
@@ -37,7 +37,7 @@ function App() {
         <Route path="/supprUser/:id" element={<SupprUser />} />
         {/* partie admin */}
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }
