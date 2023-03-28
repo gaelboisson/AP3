@@ -1,4 +1,5 @@
 import '../style/Produit.css'
+import BanniereAdmin from './BanniereAdmin';
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
@@ -38,6 +39,7 @@ export default function AdminProduit() {
 
 return (
   <>
+  <BanniereAdmin/>
   <div className='body'>
       <div className="box">
           {affichage ?

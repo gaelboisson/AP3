@@ -17,7 +17,7 @@ import SupprUser from './SupprUser';
 function App() {
   return (
     <div className="App">
-      <Banniere />
+      {/* <Banniere /> */}
       <Routes>
         {/* accueil */}
         <Route path="/" element={<Connecter />} />
@@ -37,7 +37,7 @@ function App() {
         <Route path="/supprUser/:id" element={<SupprUser />} />
         {/* partie admin */}
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

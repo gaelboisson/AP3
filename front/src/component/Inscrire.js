@@ -1,5 +1,6 @@
 import {React, useState} from 'react';
 import '../style/Inscrire.css'
+import Banniere from './Banniere';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
@@ -21,8 +22,8 @@ function FormBlog()
     let navigate = useNavigate();
 
 
-  const Inscription = async () => {
-    console.log("rhet")
+  const Inscription = async (e) => {
+    e.preventDefault()
     await axios.post(`http://localhost:8000/client`, {
         mail: mail,
         prenom: prenom,
@@ -30,7 +31,7 @@ function FormBlog()
         mdp: mdp,
     })
     .then(res => {
-        console.log(res)
+        console.log('test',res)
         if (res.status === 200) {
             alert("Ajout réussi")
             navigate("/");
@@ -43,6 +44,7 @@ function FormBlog()
 
     return (
     <div className="App">
+        <Banniere />
         <div className="form">
         <p><h3>Inscription</h3></p>
         <form onSubmit={Inscription}>
@@ -59,7 +61,9 @@ function FormBlog()
                 <input name="mdp" type="password" onChange={(e) => {setMdp(e.target.value)}} placeholder = "mdp" required />
             </div>
 
-            <input name="ConexionBtn" type="submit" value="Connexion"/>
+            <input name="ConexionBtn" type="submit" value="Inscription"/>
+            <input className="ConexionBtn" type="reset" value="Annuler"/>
+
         </form>
         </div>
     </div>

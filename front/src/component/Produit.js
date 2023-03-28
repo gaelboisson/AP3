@@ -3,6 +3,7 @@ import '../style/Produit.css'
 import Kadi from '../asset/pannier.webp'
 import ReactDOM from "react-dom/client";
 import Panier from "./Panier";
+import BanniereClient from './BanniereClient';
 import axios from 'axios';
 
 function valider(e){
@@ -38,6 +39,7 @@ export default function FavoriteColor() {
 
 return (
   <>
+  <BanniereClient/>
   <Panier count={count} destock={destock}/>
   <div className='body'>
       <div className="box">

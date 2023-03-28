@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 export default function Panier({count,destock}) {
+  localStorage.clear();
 
   const [produits, setProduits] = useState([])
   const [affichage, setAffichage] = useState(false)

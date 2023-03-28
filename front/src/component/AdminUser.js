@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import '../style/User.css'
+import BanniereAdmin from './BanniereAdmin';
 
 
 function valider(e){
@@ -36,6 +37,7 @@ export default function AdminProduit() {
 
 return (
   <>
+  <BanniereAdmin/>
   <div className='body'>
     <h1>Utilisateurs</h1>
       <div className="box">
